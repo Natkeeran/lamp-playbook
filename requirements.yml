@@ -1,0 +1,22 @@
+- src: geerlingguy.php-mysql
+  version: 2.0.1
+
+- src: geerlingguy.apache
+  version: 2.1.1
+
+- src: geerlingguy.php
+  version: 3.5.0
+
+- src: geerlingguy.composer
+  version: 1.6.1
+
+- src: geerlingguy.git
+  version: 1.4.0
+
+- src: geerlingguy.mysql
+  version: 2.8.0
+
+- src: franklinkim.ufw
+  version: 1.7.1
+
+- src: https://github.com/Natkeeran/ansible-role-ufw

@@ -1,0 +1,7 @@
+---
+
+- include: bootstrap.yml
+  tags:
+    - bootstrap
+- include: webserver.yml
+- include: ufw.yml

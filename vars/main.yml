@@ -1,0 +1,53 @@
+---
+
+islandora_extra_ubuntu_packages:
+  - wget
+  - curl
+  - htop
+  - tree
+  - zsh
+  - fish
+  - unzip
+  - build-essential
+  - vim
+
+apache_listen_port: 80
+apache_create_vhosts: true
+apache_vhosts_filename: "lamp.conf"
+apache_remove_default_vhost: true
+apache_vhosts:
+  - servername: "lamp.prod"
+    documentroot: "/var/www/html/wiki"
+    allow_override: All
+    options: -Indexes +FollowSymLinks
+
+
+php_memory_limit: "128M"
+php_max_execution_time: "90"
+php_upload_max_filesize: "256M"
+
+
+mysql_root_password: testtest
+mysql_databases:
+  - name: example_db
+    encoding: latin1
+    collation: latin1_general_ci
+mysql_users:
+  - name: drupal8
+    host: "%"
+    password: testtest2
+    priv: "example_db.*:ALL"
+
+ufw_rules:
+  - rule: allow
+    to_port: 22
+
+  - rule: allow
+    to_port: 80
+
+  - rule: allow
+    to_port: 3306
+
+  - rule: allow
+    to_port: 443
+

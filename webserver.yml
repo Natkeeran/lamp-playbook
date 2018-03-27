@@ -1,0 +1,13 @@
+---
+
+- hosts: webserver
+  become: yes
+  vars_files:
+    - vars/main.yml
+  roles:
+    - geerlingguy.apache
+    - geerlingguy.php
+    - geerlingguy.php-mysql
+    - geerlingguy.git
+    - geerlingguy.composer
+
