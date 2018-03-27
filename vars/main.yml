@@ -23,20 +23,21 @@ apache_vhosts:
 
 
 php_memory_limit: "128M"
-php_max_execution_time: "90"
+php_max_execution_time: "180"
 php_upload_max_filesize: "256M"
 
-
-mysql_root_password: testtest
+mysql_root_username: mysqlroot
+mysql_root_password: changeme
 mysql_databases:
-  - name: example_db
-    encoding: latin1
-    collation: latin1_general_ci
+  - name: application_db
+    encoding: utf8
+    collation: utf8_general_ci
+
 mysql_users:
-  - name: drupal8
+  - name: application_db_user
     host: "%"
-    password: testtest2
-    priv: "example_db.*:ALL"
+    password: changeme
+    priv: "application_db.*:ALL"
 
 ufw_rules:
   - rule: allow
